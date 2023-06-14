@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var iNTERVAL;
+        function mmmoookkk(){
+            let bu = document.getElementById('bu');
+            let son = document.getElementById('아들');
+            if(bu.textContent=='시작'){
+                bu.textContent='종료';
+                son.style.top="0%";
+                son.style.left="0%";
+                iNTERVAL=setInterval(Intv,1000);
+                function Intv(){
+                    // alert(son.style.top);
+                    let stop = son.style.top;
+                    let sleft = son.style.left;
+                    let top = Number(stop.substring(0,stop.length-1));
+                    let left = Number(sleft.substring(0,sleft.length-1));
+                    top = (top+2)%52;
+                    left = (left+2)%52;
+                    stop = top+"%";
+                    sleft = left+"%";
+                    son.style.top = stop;
+                    son.style.left = sleft;
+                }
+            }else if(bu.textContent=='종료'){
+                bu.textContent='시작'
+                clearInterval(iNTERVAL)
+            }
+        }
+    </script>
+    <style>
+        #아빠 {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            background-color: hsla(50,50%,50%);
+        }
+        #아들 {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: hsla(0,80%,60%);
+            top: 0%;
+            left: 0%;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="mmmoookkk();" id="bu">시작하기</button>
+    <div id="아빠">
+        <div id="아들"></div>
+    </div>
+</body>
+</html>

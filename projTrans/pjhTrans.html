@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 10vw;
+            height: 15vh;
+            background-color: red;
+            transition: 2s;
+        }
+        div:hover {
+            width: 80vw;
+        }
+        #ease{transition-timing-function: ease; background-color:rgb(255, 128, 0);}
+        #Linear{transition-timing-function: linear;}
+        #ease-in{transition-timing-function: ease-in;background-color:rgb(255, 225, 0);}
+        #ease-out{transition-timing-function: ease-out;background-color:rgb(8, 184, 20);}
+        #ease-in-out{transition-timing-function: ease-in-out;background-color:rgb(43, 0, 255);}
+
+
+    </style>
+    <script>
+        const shi =() => {
+            let arrdivease = document.querySelectorAll(".cDiv");
+            let dob = document.getElementById('button');
+            let gg;
+            if(dob.textContent=='시작'){
+                dob.textContent='초기화';
+                gg = "80vw";
+            }
+            else{
+                dob.textContent='시작';
+                gg = "10vw";
+                
+            }
+            //alert(arrdivease.length);
+            // arrdivease.forEach((pVal,pIdx,pArr)=>(pVal.style.width="80vw"));
+            for(let i = 0;i<arrdivease.length;i++){
+                arrdivease[i].style.width=gg;
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div>Welcome to Color World!</div>
+    <button onclick="shi()" id="button">!시작!</button>
+    <div class="cDiv" id="Linear"> Linear</div>
+    <div class="cDiv" id="ease"> Ease</div>
+    <div class="cDiv" id="ease-in"> Ease-In</div>
+    <div class="cDiv" id="ease-out"> Ease-Out</div>
+    <div class="cDiv" id="ease-in-out"> Ease-In-Out</div>
+</body>
+</html>

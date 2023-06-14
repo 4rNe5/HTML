@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <title>do not study about form</title>
+        <style>
+            h1 {
+                color:green;
+                text-align: center;
+            }
+            input {
+                background-color: yellow;
+            }
+            .df {
+                color: red;
+            }
+            .gre {
+                color: green;
+                display: inline-block;
+                width: 13%;
+                text-align: right;
+            }
+            #qhsprl {
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+            }
+            div {
+                margin-top: 5px;
+            }
+
+        </style>
+        <script>
+            function myChk(){
+                var lfm = document.fm;
+                var lgrd = lfm.grd;
+                var lcls = lfm.cls;
+                var lnum = lfm.num;
+                var acc = lfm.accessKey;
+                
+                if(lgrd.value==""){
+                    alert("please select your grade");
+                    lgrd.focus();
+                    return false;
+                }
+                else if(lcls.value=='0'){
+                    alert('please select your class');
+                    lcls.focus();
+                    return false;
+                }
+                else if(lnum.value==''||isNaN(lnum.value)){
+                    alert('please select your num')
+                    lnum.focus()
+                    return false;
+                }
+                else if(length(acc)!=4){
+                    alert('no 4 ass')
+                    acc.focus;
+                    return false;
+                }
+                else{
+                    fm.submit();
+                    alert("send success")
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1> !!welcome to our Form!! </h1>
+        <form name="fm" method="post" action="http://arabbit.link/dirSw/insrtHstry.php" onsubmit="return false;">
+            <div><label class="gre">학년 : </label>
+                <input id="idFor" type="radio" name="grd" value="1"><label for="idFor" class="df">1학년</label>
+                <input id="idFor2" type="radio" name="grd" value="2"><label for="idFor2" class="df">2학년</label>
+                <input id="idFor3" type="radio" name="grd" value="3"><label for="idFor3" class="df">3학년</label>
+            </div>
+            <div><label class="gre">반</label>
+                <select name="cls">
+                    <option value="0">반이 뭐니?</option>
+                    <option value="1">1반</option>
+                    <option value="2">2반</option>
+                    <option value="3">3반</option>
+                    <option value="4">4반</option>
+                </select>
+            </div>
+            <div><label class="gre">번호</label><input type="text" name="num" placeholder="번호"></div>
+            <div><label class="gre">구분</label><input type="text" name="gbn1" placeholder="구분자"></div>
+            <div><label class="gre">구분2</label><input type="text" name="gbn2" placeholder="구분자2"></div>
+            <div><label class="gre">인증키</label><input type="password" name="accessKey" placeholder="번호"></div>
+            <div id="qhsprl"><input type="submit" value="보내봐" id="qhsprl" onclick="myChk();"></div>
+        </form>
+    </body>
+</html>

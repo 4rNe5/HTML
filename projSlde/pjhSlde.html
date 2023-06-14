@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sld {
+            width: 100%;
+            height: 100%;
+        }
+        #pgs {
+            width: 100%;
+            text-align: center;
+        }
+        .dot {
+            display: inline-block;
+            width: 3vw;
+            height: 3vh;
+            border-radius: 50%;
+            background-color: hsla(210,70%,50%);
+            cursor: pointer;
+        }
+        .csld {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .cfde {
+            display: none;
+        }
+        .csld img{
+            width: 100%;
+            height: 100%;
+        }
+        .cpge {
+            position: absolute;
+            left: 2px;
+            top: 2px;
+            color: #eee;
+            font-size: 3vw;
+            font-weight: bold;
+        }
+        .cptn {
+            position: absolute;
+            bottom: 2px;
+            width: 100%;
+            text-align: center;
+            color: #eee;
+            font-size: 3vw;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        var np = 0;
+        function Current(pr){
+            let arsl = document.querySelectorAll('.csld')
+            for(i=0;i<arsl.length;i++){
+                arsl[i].className = "csld cfde";
+            }
+            arsl[pr-1].className = "csld";
+        }
+        window.onload = function(){
+            np = 3;
+            Current(np)
+        }
+    </script>
+</head>
+<body>
+    <div id="ppp" style="width: 100vw;height:70vh;background-color: orange;">
+        <div class="sld">
+            <div class="csld">
+                <div class="cpge">1/3</div>
+                <img src="http://arabbit.link/images/aurora.jpg">
+                <div class="cptn">aurora</div>
+            </div>
+            <div class="csld cfde">
+                <div class="cpge">2/3</div>
+                <img src="http://arabbit.link/images/canyon.jpg">
+                <div class="cptn">canyon</div>
+            </div>
+            <div class="csld cfde">
+                <div class="cpge">3/3</div>
+                <img src="http://arabbit.link/images/mountain.jpg">
+                <div class="cptn">mountain</div>
+            </div>
+        </div>
+    </div>
+    <div id="pgs">
+        <span class="dot" onclick="Current(1)">1</span>
+        <span class="dot" onclick="Current(2)">2</span>
+        <span class="dot" onclick="Current(3)">3</span>
+    </div>
+</body>
+</html>

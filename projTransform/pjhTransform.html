@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function shi(para){
+            let shiopj = document.getElementById('papaobj');
+            if(para == 'tran'){
+                shiopj.style.transform = `translate(200px, 200px)`
+            }else if(para == 'init'){
+                location.reload();
+            }else if(para == 'rote'){
+                shiopj.style.transform = `rotate(150deg)`
+            }else if(para == 'scl'){
+                shiopj.style.transform = `scale(0.5,3)`
+            }else if(para == 'skx'){
+                shiopj.style.transform = `skewX(45deg)`
+            }else if(para == 'sky'){
+                shiopj.style.transform = `skewY(45deg)`
+            }else if(para == 'roteX'){
+                shiopj.style.transform = `rotateX(135deg)`
+            }else if(para == 'roteY'){
+                shiopj.style.transform = `rotateY(135deg)`
+            }else if(para == 'roteZ'){
+                shiopj.style.transform = `rotateZ(135deg)`
+            }
+        }
+    </script>
+    <style>
+        #ss{
+            width: 90vw;
+            height: 80vh;
+            padding:100px;
+            border: red double 2px;
+        }
+        #papaobj {
+            width: 80px;
+            height: 80px;
+            background-color: hsla(240,50%,60%);
+            background: linear-gradient(0deg, gray, blueviolet);
+            transition: 1s;
+            transition-timing-function: ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="shi('tran')">transpose</button>
+    <button onclick="shi('rote')">rote</button>
+    <button onclick="shi('scl')">scale</button>
+    <button onclick="shi('skx')">skewX</button>
+    <button onclick="shi('sky')">skewY</button>
+    <button onclick="shi('roteX')">roteX</button>
+    <button onclick="shi('roteY')">roteY</button>
+    <button onclick="shi('roteZ')">roteZ</button>
+    <button onclick="shi('init')">init</button>
+    <div id="ss">
+    <div id="papaobj"></div>
+    </div>
+
+</body>
+</html>

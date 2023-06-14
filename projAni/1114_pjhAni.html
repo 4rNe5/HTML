@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #chichi {
+            width: 80vw;
+            height: 120vh;
+            background-color: hsla(120, 50%, 60%);
+            padding: 100px;
+            border: red dashed 3px;
+            position: relative;
+        }
+        #ko {
+            width: 80px;
+            height: 80px;
+            background-color: hsla(240,80%,70%);
+        }
+        @keyframes bbb {
+            from {background-color: red;top:0%;left:0%;}
+            to {background-color: blue;top:50%;left:50%;}
+        }
+        @keyframes bbbmulti {
+            0% {background-color: red;top:0%;left:0%;}
+            20% {background-color: orange;top:10%;left:10%;}
+            40% {background-color: yellow;top:20%;left:20%;}
+            60% {background-color: green;top:30%;left:30%;}
+            80% {background-color: blue;top:40%;left:40%;}
+            100% {background-color: hsla(248, 80%, 30%);top:50%;left:50%;}
+        }
+    </style>
+    <script>
+        function ccc(para){
+            let ko = document.getElementById("ko");
+            if(para == 'st'){
+                ko.style.position = "static";
+                ko.style.animation = "bbbmulti 4s forwards";
+            }else if(para == 're'){
+                ko.style.position="relative";
+                ko.style.animation="bbbmulti 4s forwards"
+            }else if(para == 'ab'){
+                ko.style.position="absolute";
+                ko.style.animation="bbbmulti 4s forwards infinite alternate"
+            }else if(para == 'fi'){
+                ko.style.position="fixed";
+                ko.style.animation="bbbmulti 4s forwards"
+            }else if(para == 'rs'){
+                location.reload();
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="ccc('st')">b1</button>
+    <button onclick="ccc('re')">b2</button>
+    <button onclick="ccc('ab')">b3</button>
+    <button onclick="ccc('fi')">b4</button>
+    <button onclick="ccc('rs')">b5</button>
+    <h1>Hi</h1>
+    <h2>Hii</h2>
+    <h2>Hiii</h2>
+    <div id="chichi">
+        <div id="ko"></div>
+    </div>
+</body>
+</html>
